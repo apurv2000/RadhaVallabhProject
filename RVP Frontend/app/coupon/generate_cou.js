@@ -154,13 +154,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-  noticeBox: {
-    backgroundColor: '#333',
-    borderRadius: 10,
-    padding: 35,
-    marginTop: 25,
-    top:height*0.08
-  },
+noticeBox: {
+  backgroundColor: '#333',
+  borderRadius: width * 0.025,      // ~10 for most devices
+  padding: width * 0.05,            // ~20 padding based on width
+  marginTop: height * 0.1,         // 2% vertical spacing
+  marginHorizontal: width * 0.05,   // 5% horizontal spacing (optional)
+},
   noticeText: {
     color: 'white',
     fontSize: 14,

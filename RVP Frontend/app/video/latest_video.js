@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import {
-    Dimensions,
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import Header from '../header';
 import CustomTabBar from '../tab';
 
-const { width } = Dimensions.get('window');
+const { width,height } = Dimensions.get('window');
 
 const videos = [
   {
@@ -28,6 +28,13 @@ const videos = [
     speaker: 'H.G. Tarun Krishna Das',
     date: '7 June 2025',
     thumbnail: require('../../assets/images/T2.png'),
+  },
+  {
+    id: 'nPt8bK2gbaU',
+    title: 'क्या पत्नी बचें मायाजाल से?',
+    speaker: 'H.G. Achyutakrishna Das',
+    date: '7 June 2025',
+    thumbnail: require('../../assets/images/Live.jpg'),
   },
     {
     id: 'nPt8bK2gbaU',
@@ -50,14 +57,12 @@ export default function LatestVideoScreen() {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={{ flex: 1 }}>
-        <Header />
+      <Header />
 
+  
         <Text style={styles.pageTitle}>LATEST VIDEO</Text>
 
-        <Image source={require('../../assets/images/deity-bg-lotus.png')} style={styles.flowerTopLeft} />
-        <Image source={require('../../assets/images/deity-bg-lotus.png')} style={styles.flowerTopRight} />
-
+       
         {/* YouTube Player */}
         <View style={styles.banner}>
           <YoutubePlayer
@@ -71,9 +76,15 @@ export default function LatestVideoScreen() {
         <View style={styles.channelText}>
           <Text style={styles.channelLabel}>Youtube Channel</Text>
           <Text style={styles.channelTitle}>{selectedVideo.title}</Text>
-          <Text style={styles.subtext}>{selectedVideo.speaker} - {selectedVideo.date}</Text>
+          <Text style={styles.subtext}>
+            {selectedVideo.speaker} - {selectedVideo.date}
+          </Text>
         </View>
-
+         <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: 100 }}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Video List */}
         {videos.map((video, index) => (
           <TouchableOpacity
@@ -89,9 +100,10 @@ export default function LatestVideoScreen() {
             </View>
           </TouchableOpacity>
         ))}
+            <CustomTabBar />
       </ScrollView>
 
-      <CustomTabBar />
+  
     </View>
   );
 }
@@ -106,6 +118,7 @@ const styles = StyleSheet.create({
     color: '#1e1e1e',
     backgroundColor: '#efb6d4',
     letterSpacing: 1.5,
+    paddingVertical: 10,
   },
   banner: {
     marginHorizontal: 16,
@@ -115,7 +128,7 @@ const styles = StyleSheet.create({
   },
   channelText: {
     paddingHorizontal: 16,
-    marginTop: 20,
+    marginTop: 15,
   },
   channelLabel: {
     color: '#A08AFF',
@@ -139,7 +152,8 @@ const styles = StyleSheet.create({
   videoCard: {
     flexDirection: 'row',
     backgroundColor: '#1e1e1e',
-    margin: 8,
+    marginHorizontal: 16,
+    marginVertical: 8,
     padding: 10,
     borderRadius: 10,
     gap: 10,
@@ -163,22 +177,5 @@ const styles = StyleSheet.create({
     color: '#bbb',
     fontSize: 11,
   },
-  flowerTopLeft: {
-    position: 'absolute',
-    top: 320,
-    left: -80,
-    width: width * 0.40,
-    height: width * 0.40,
-    resizeMode: 'contain',
-    opacity: 0.5,
-  },
-  flowerTopRight: {
-    position: 'absolute',
-    top: 320,
-    right: -80,
-    width: width * 0.40,
-    height: width * 0.40,
-    resizeMode: 'contain',
-    opacity: 0.5,
-  },
+
 });

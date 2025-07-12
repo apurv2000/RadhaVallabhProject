@@ -24,7 +24,7 @@ export default function CustomTabBar() {
   return (
     <View style={styles.container}>
       <View style={styles.tabBackground}>
-        {renderTab('darshan/insta_view', 'images-outline')}
+      {renderTab('quotes/quotes', 'chatbubble-ellipses-outline')}
         {renderTab('activities', 'heart', 28)}
         {renderTab('dashboard/dashboard', 'home', 28)}
         {renderTab('courses/courses', 'school-outline')}
@@ -36,7 +36,7 @@ export default function CustomTabBar() {
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
-    bottom: 40,
+    bottom: 20,
     left: 10,
     right: 10,
     alignItems: "center",

@@ -126,7 +126,7 @@ export default function WelcomeTempleScreen({ isDarkMode, toggleTheme }) {
           <View style={styles.cardRow}>
             <TouchableOpacity
               style={styles.card1}
-              onPress={() => router.push('./darshan')}
+              onPress={() => router.push('../darshan/live_darshan')}
             >
               <Image
                 source={require('../../assets/images/Live.jpg')}
@@ -138,7 +138,7 @@ export default function WelcomeTempleScreen({ isDarkMode, toggleTheme }) {
 
             <TouchableOpacity
               style={styles.card2}
-              onPress={() => router.push('./activities')}
+              onPress={() => router.push('../activities/all_activity')}
             >
               <Image
                 source={require('../../assets/images/Live.jpg')}
@@ -154,7 +154,7 @@ export default function WelcomeTempleScreen({ isDarkMode, toggleTheme }) {
           <View style={styles.cardRow}>
            <TouchableOpacity
               style={styles.card3}
-              onPress={() => router.push('./gallery')}
+              onPress={() => router.push('../gallery/gallery')}
             >
               <Image
                 source={require('../../assets/images/Live.jpg')}
@@ -186,6 +186,7 @@ export default function WelcomeTempleScreen({ isDarkMode, toggleTheme }) {
             <Text style={styles.cardText5} onPress={() => router.push('../upcoming_festival/festival')}>Upcoming Festivals</Text>
           </TouchableOpacity>
         </View>
+        
  <CustomTabBar />
        
       </ScrollView>

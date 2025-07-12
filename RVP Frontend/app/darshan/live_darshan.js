@@ -126,15 +126,13 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    
-    marginHorizontal: 16,
-    top:height*0.09,
+    marginHorizontal: width * 0.04,         // ~16px on standard 400px width
+    marginTop: height * 0.07,               // instead of negative top
     backgroundColor: '#9c27b0',
-    borderRadius: 16,
-    padding: 16,
-    marginTop: 16,
+    borderRadius: width * 0.04,             // makes corners adaptive
+    padding: width * 0.04,                  // instead of 16
     position: 'relative',
-    height: height*0.2, // 👈 reduce height directly
+    minHeight: height * 0.18,               // responsive height
   },
   cardHeading: { color: '#fff', fontSize: 16, fontWeight: '600' },
   cardDate: {
@@ -158,16 +156,16 @@ const styles = StyleSheet.create({
 
   cardImage: {
     width: '50%',
-    height: 160,
+    height: height*0.15,
     resizeMode: 'cover',
     borderRadius: 10,
-    marginTop: 12,
-    left:width* 0.40,
-    top:-height*0.13
+    marginTop: -height*0.10,
+    left:width* 0.42,
+    // top:-height*0.15
   },
   arrowIcon: {
     position: 'absolute',
-    right: 12,
+    right: 3,
     top: '50%',
   },
 

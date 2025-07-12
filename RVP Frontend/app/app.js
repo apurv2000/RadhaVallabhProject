@@ -52,8 +52,8 @@ export default function SignUpScreen() {
   };
 
   try {
-    const res = await axios.post("http://192.168.1.21:5000/api/signup", signupData);
-    alert(res.data.message);
+    const res = await axios.post("http://192.168.1.21:3000/api/signup", signupData);
+    alert("Welcome to SHRI GAUR RADHAVALLABHA TEMPLE");
     router.push('./login/login'); // go to login after signup
   } catch (err) {
     console.error("Signup Error:", err.message);

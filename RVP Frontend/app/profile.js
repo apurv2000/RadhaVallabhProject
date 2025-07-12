@@ -84,7 +84,7 @@ const handlePickImage = async () => {
 
   try {
     const userId = await AsyncStorage.getItem('userId');
-    const res = await fetch(`http://192.168.1.21:5000/api/upload-profile-image/${userId}`, {
+    const res = await fetch(`http://192.168.1.21:3000/api/upload-profile-image/${userId}`, {
       method: 'POST',
       body: formData,
       headers: {
@@ -124,7 +124,7 @@ const updateUserProfile = async () => {
   try {
     const userId = await AsyncStorage.getItem("userId");
     
-    const res = await fetch("http://192.168.1.21:5000/api/update-profile/" + userId, {
+    const res = await fetch("http://192.168.1.21:3000/api/update-profile/" + userId, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -321,12 +321,12 @@ editPhotoIcon: {
 
   name: {
     color: '#b68eff',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     marginTop: 6,
     textShadowColor: '#fff',
     textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 5,
+    textShadowRadius: 1,
   },
   infoSection: {
     marginTop: 20,
